@@ -5,8 +5,36 @@
   --font-serif: 'Playfair Display', serif;
 }
 
+html {
+  color-scheme: dark;
+  scroll-padding-top: 6rem;
+}
+
 body {
   background-color: #0a0a0a;
   color: #fafafa;
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus everywhere, in the brand accent. */
+:focus-visible {
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: rgb(245 158 11 / 0.35);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,18 +1,17 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './assets/Components/Home/Header';
-import Footer from './assets/Components/Home/Footer';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import ScrollToTop from './components/ScrollToTop';
 
-const App = () => {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow flex flex-col">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
-  )
-}
+const App = () => (
+  <div className="flex flex-col min-h-screen">
+    <ScrollToTop />
+    <Header />
+    <main id="main-content" tabIndex={-1} className="flex-grow flex flex-col focus:outline-none">
+      <Outlet />
+    </main>
+    <Footer />
+  </div>
+);
 
 export default App;
